@@ -98,6 +98,8 @@ var contractABI = [
 
 var contractAddress = "0xe1cF6d7343e9660c77b02aF664135c94d8fa67D6";
 
+// The contractABI and contractAddress variables reference to the contract which I have deployed. You can edit these variables and change them to your contract address and ABI after deploying your own contract or else you can work with mine  
+
 var address;
 
 var userAddress = document.getElementById('account-address');
@@ -113,21 +115,21 @@ async function ConnectMetamask() {
 }
 
 async function DepositEther(){
-	console.log(depositAmount.value);
-	contract.methods.deposit().send({from: address, value: depositAmount.value}, function(err, res){
+	console.log("Deposit Amount: " + depositAmount.value);
+	await contract.methods.deposit().send({from: address, value: depositAmount.value}, function(err, res){
 		console.log("Transaction hash: "+res);
 	})
 }
 
 async function WithdrawEther(){
-	console.log(withdrawAmount.value);
-	contract.methods.withdraw(withdrawAmount.value).send({from: address}, function(err, res){
+	console.log("Withdraw Amount: " + withdrawAmount.value);
+	await contract.methods.withdraw(withdrawAmount.value).send({from: address}, function(err, res){
 		console.log("Transaction hash: "+res);
 	})
 }
 
 async function GetBalance(){
-	contract.methods.getBalance().call({from: address}, function(err, res){
+	await contract.methods.getBalance().call({from: address}, function(err, res){
 		balance.innerText = "Balance: " + res + " wei"
 		console.log("Balance: " + res + " wei");
 	})

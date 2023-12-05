@@ -15,7 +15,7 @@ Decentralised Bank App built on Ethereum and deploted on Sepolia Testnet
 - [License](#license)
 
 ## Getting Started
-Follow these steps to get the dapp running on your local machine
+Follow these steps to get the dapp running on your local machine <br>
 
 ## Built With
 - [HTML](https://www.w3schools.com/html/html_intro.asp) - Used for creating structure of the webpage
@@ -41,7 +41,8 @@ Follow these steps to get the dapp running on your local machine
 ## Run DApp
 1. Fork this repo by clicking **Fork** button in top-right corner of this web page. Continue to follow instruction steps from your own ethereum-bank-dapp repo.
    
-2. Clone your own ethereum-bank-dapp repo. Copy the link from the "Clone or download" button near the top right of this repo's home page.
+2. Clone your own ethereum-bank-dapp repo. Copy the link from the "Clone or download" button near the top right of this repo's home page. <br>
+*(You can even clone this repo without forking it, so you can skip step 1)*
 
 3. After cloning use this command to install all the required modules
     ```
@@ -60,6 +61,8 @@ You can check for the deployed smart contract here (https://sepolia.etherscan.io
 Dapp World <br>
 [Ganesh Deshpande CTO, DApp World](https://www.linkedin.com/in/ganesh-deshpande-3477b9169/) <br><br>
 [Course Link](https://dapp-world.com/course/ethereum-dapp-development-beginner-T2QL) - Ethereum DApp Development : Beginner
+
+[My dapp-world profile](https://dapp-world.com/soul/Shoydon)
 
 ## License
 MIT
