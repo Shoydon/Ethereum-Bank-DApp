@@ -1,8 +1,12 @@
 # Ethereum-Bank-DApp
 
+Main Dashboard
 ![Screenshot0](img1.png)
+Deposit 10000 wei
 ![Screenshot0](img2.png)
+Withdraw 7000 wei
 ![Screenshot0](img3.png)
+Bank Owner Dashboard
 ![Screenshot0](img4.png)
 
 Decentralised Bank App built on Ethereum and deployed on Sepolia Testnet
@@ -14,7 +18,7 @@ If the bank owner functionalities are not needed then you can remove the code fr
 .
 .
 .
-//ADMIN PART OF CODE END
+// ADMIN PART OF THE CODE END
 ``` 
 
 ## Table of Contents
