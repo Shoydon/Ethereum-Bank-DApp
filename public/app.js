@@ -106,6 +106,8 @@ var userAddress = document.getElementById('account-address');
 var depositAmount = document.getElementById('deposit-ether');
 var withdrawAmount = document.getElementById('withdraw-ether');
 var balance = document.getElementById('account-balance');
+var withdrawFundsAmount = document.getElementById('withdraw-funds');
+var contractBalance = document.getElementById('contract-balance');
 
 async function ConnectMetamask() {
 	var accounts = await ethereum.request({method: 'eth_requestAccounts'});
@@ -132,6 +134,40 @@ async function GetBalance(){
 	await contract.methods.getBalance().call({from: address}, function(err, res){
 		balance.innerText = "Balance: " + res + " wei"
 		console.log("Balance: " + res + " wei");
+	})
+}
+
+async function AdminDashboard(){
+	try{
+		const bankOwner = await contract.methods.bankOwner().call();
+		if(address.toLowerCase() === bankOwner.toLowerCase()){
+			window.location.href = '/admin';
+		} else {
+			window.location.href = '';
+			alert("You are not the Bank Owner");
+		}
+	} catch(err){
+		console.log(err);
+	}
+}
+
+async function GetContractBalance(){
+	var accounts = await ethereum.request({method: 'eth_requestAccounts'});
+	address = accounts[0];
+	console.log(address);
+	await contract.methods.getContractBalance().call({from:address}, function(err, res){
+		contractBalance.innerText = "Contract Balance: " + res + " wei"
+		console.log("Contract Balance: " + res + " wei");
+	})
+}
+
+async function WithdrawFunds(){
+	var accounts = await ethereum.request({method: 'eth_requestAccounts'});
+	address = accounts[0];
+	console.log(address);
+	console.log("Withdraw Amount: " + withdrawFundsAmount.value);
+	await contract.methods.withdrawFunds(withdrawFundsAmount.value).send({from: address}, function(err, res){
+		console.log("Transaction hash: "+res);
 	})
 }
 
