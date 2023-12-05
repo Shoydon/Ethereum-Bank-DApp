@@ -3,8 +3,19 @@
 ![Screenshot0](img1.png)
 ![Screenshot0](img2.png)
 ![Screenshot0](img3.png)
+![Screenshot0](img4.png)
 
 Decentralised Bank App built on Ethereum and deployed on Sepolia Testnet
+## NOTE
+In order for the bank owner section to work in your local machine, you need to deploy the contract with **YOUR** address on sepolia testnet.<br>
+If the bank owner functionalities are not needed then you can remove the code from the files enclosed in these:
+```
+// ADMIN PART OF THE CODE START
+.
+.
+.
+//ADMIN PART OF CODE END
+``` 
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -25,6 +36,8 @@ Follow these steps to get the dapp running on your local machine <br>
 - [Remix IDE](https://remix.ethereum.org/) - It is an IDE used to test/debug/develop/deploy solidity smart contracts.
 - [Web3j](https://github.com/web3j/web3j) - It is a library to interact with smart contracts from javascript application
 - [Metamask](https://metamask.io/) - It is a crypto wallet used to send/receive crypto assessts as well as sign the transactions while interacting with DApps
+<br><br>
+[Table of Contents](#table-of-contents)
 
 ## Prerequisites
 1. Check if node is installed and up-to-date 
@@ -37,6 +50,8 @@ Follow these steps to get the dapp running on your local machine <br>
 
 3. Have sufficient Sepolia Ethers in your metamask wallet <br>
    You can get free test Ethers from (https://sepoliafaucet.com/)
+<br><br>
+[Table of Contents](#table-of-contents)
 
 ## Run DApp
 1. Fork this repo by clicking **Fork** button in top-right corner of this web page. Continue to follow instruction steps from your own ethereum-bank-dapp repo.
@@ -56,6 +71,8 @@ Follow these steps to get the dapp running on your local machine <br>
    ```
 
 You can check for the deployed smart contract here (https://sepolia.etherscan.io/address/0xe1cF6d7343e9660c77b02aF664135c94d8fa67D6)
+<br><br>
+[Table of Contents](#table-of-contents)
 
 ## Credits
 Dapp World <br>

@@ -106,8 +106,11 @@ var userAddress = document.getElementById('account-address');
 var depositAmount = document.getElementById('deposit-ether');
 var withdrawAmount = document.getElementById('withdraw-ether');
 var balance = document.getElementById('account-balance');
+
+// ADMIN PART OF THE CODE START
 var withdrawFundsAmount = document.getElementById('withdraw-funds');
 var contractBalance = document.getElementById('contract-balance');
+//ADMIN PART OF CODE END
 
 async function ConnectMetamask() {
 	var accounts = await ethereum.request({method: 'eth_requestAccounts'});
@@ -137,6 +140,7 @@ async function GetBalance(){
 	})
 }
 
+// ADMIN PART OF THE CODE START
 async function AdminDashboard(){
 	try{
 		const bankOwner = await contract.methods.bankOwner().call();
@@ -170,6 +174,7 @@ async function WithdrawFunds(){
 		console.log("Transaction hash: "+res);
 	})
 }
+//ADMIN PART OF CODE END
 
 document.addEventListener('DOMContentLoaded', async () => {
 	if(typeof window.ethereum !== 'undefined'){
