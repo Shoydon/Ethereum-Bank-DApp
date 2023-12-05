@@ -4,7 +4,7 @@
 ![Screenshot0](img2.png)
 ![Screenshot0](img3.png)
 
-Decentralised Bank App built on Ethereum and deploted on Sepolia Testnet
+Decentralised Bank App built on Ethereum and deployed on Sepolia Testnet
 
 ## Table of Contents
 - [Getting Started](#getting-started)
