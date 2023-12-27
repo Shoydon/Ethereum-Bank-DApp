@@ -81,9 +81,9 @@ You can check for the deployed smart contract here (https://sepolia.etherscan.io
 ## Credits
 Dapp World <br>
 [Ganesh Deshpande CTO, DApp World](https://www.linkedin.com/in/ganesh-deshpande-3477b9169/) <br><br>
-[Course Link](https://dapp-world.com/course/ethereum-dapp-development-beginner-T2QL) - Ethereum DApp Development : Beginner
+Course Link - [Ethereum DApp Development : Beginner](https://dapp-world.com/course/ethereum-dapp-development-beginner-T2QL)
 
-[My dapp-world profile](https://dapp-world.com/soul/Shoydon)
+My dapp-world profile: [Shoydon](https://dapp-world.com/soul/Shoydon)
 
 ## License
 MIT
