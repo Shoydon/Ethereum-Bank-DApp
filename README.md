@@ -1,4 +1,5 @@
 # Ethereum-Bank-DApp
+### [Ethereum Bank DApp](https://ethereum-bank-dapp.netlify.app/)
 
 Main Dashboard
 ![Screenshot0](img1.png)
@@ -9,7 +10,7 @@ Withdraw 7000 wei
 Bank Owner Dashboard
 ![Screenshot0](img4.png)
 
-Decentralised Bank App built on Ethereum and deployed on Sepolia Testnet
+Decentralised Bank App built on Ethereum and deployed on Sepolia Testnet. The working app can be seen [here](https://ethereum-bank-dapp.netlify.app/)
 ## NOTE
 In order for the bank owner section to work in your local machine, you need to deploy the contract with **YOUR** address on sepolia testnet.<br>
 If the bank owner functionalities are not needed then you can remove the code from the files enclosed in these:
@@ -40,6 +41,7 @@ Follow these steps to get the dapp running on your local machine <br>
 - [Remix IDE](https://remix.ethereum.org/) - It is an IDE used to test/debug/develop/deploy solidity smart contracts.
 - [Web3j](https://github.com/web3j/web3j) - It is a library to interact with smart contracts from javascript application
 - [Metamask](https://metamask.io/) - It is a crypto wallet used to send/receive crypto assessts as well as sign the transactions while interacting with DApps
+- [Netlify](https://www.netlify.com/) - Instantly build and deploy your sites to our global network from Git. Custom domains, https, deploy previews, rollbacks and much more.
 <br><br>
 [Table of Contents](#table-of-contents)
 
