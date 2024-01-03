@@ -113,31 +113,60 @@ var contractBalance = document.getElementById('contract-balance');
 //ADMIN PART OF CODE END
 
 async function ConnectMetamask() {
-	var accounts = await ethereum.request({method: 'eth_requestAccounts'});
-	address = accounts[0];
-	console.log("Account 1: " + address);
-	userAddress.innerText = "Connected Account address: " + address;
+	if(typeof window.ethereum !== 'undefined'){
+		if(window.ethereum.isConnected()){
+			var accounts = await ethereum.request({method: 'eth_requestAccounts'});
+			address = accounts[0];
+			console.log("Account 1: " + address);
+			userAddress.innerText = "Connected Account address: " + address;
+		}
+	} else {
+		alert("Please install Metamask")
+	}
 }
 
 async function DepositEther(){
-	console.log("Deposit Amount: " + depositAmount.value);
-	await contract.methods.deposit().send({from: address, value: depositAmount.value}, function(err, res){
-		console.log("Transaction hash: "+res);
-	})
+	if (depositAmount.value <= 0 || depositAmount.value == undefined) {
+		alert("Amount cannot be zero or less")
+	} else {
+		try {
+			console.log("Deposit Amount: " + depositAmount.value);
+			await contract.methods.deposit().send({from: address, value: depositAmount.value}, function(err, res){
+				console.log("Transaction hash: "+res);
+			})
+		} catch (e) {
+			alert("An error occured, check if you have metamask installed and connected your wallet");
+			console.log(e);
+		}
+	}
 }
 
 async function WithdrawEther(){
-	console.log("Withdraw Amount: " + withdrawAmount.value);
-	await contract.methods.withdraw(withdrawAmount.value).send({from: address}, function(err, res){
-		console.log("Transaction hash: "+res);
-	})
+	if (withdrawAmount.value <= 0 || withdrawAmount.value == undefined) {
+		alert("Amount cannot be zero or less")
+	} else {
+		try {
+			console.log("Withdraw Amount: " + withdrawAmount.value);
+			await contract.methods.withdraw(withdrawAmount.value).send({from: address}, function(err, res){
+				console.log("Transaction hash: "+res);
+			})
+		} catch (e) {
+			alert("An error occured, check if you have metamask installed and connected your wallet");
+			console.log(e);
+		}
+	}
 }
 
 async function GetBalance(){
-	await contract.methods.getBalance().call({from: address}, function(err, res){
-		balance.innerText = "Balance: " + res + " wei"
-		console.log("Balance: " + res + " wei");
-	})
+	try {
+		await contract.methods.getBalance().call({from: address}, function(err, res){
+			balance.innerText = "Balance: " + res + " wei"
+			console.log("Balance: " + res + " wei");
+		})
+	} catch (e) {
+		alert("An error occured, check if you have metamask installed and connected your wallet");
+		console.log(e);
+	}
 }
 
 // ADMIN PART OF THE CODE START
@@ -156,23 +185,37 @@ async function AdminDashboard(){
 }
 
 async function GetContractBalance(){
-	var accounts = await ethereum.request({method: 'eth_requestAccounts'});
-	address = accounts[0];
-	console.log(address);
-	await contract.methods.getContractBalance().call({from:address}, function(err, res){
-		contractBalance.innerText = "Contract Balance: " + res + " wei"
-		console.log("Contract Balance: " + res + " wei");
-	})
+	try {
+		var accounts = await ethereum.request({method: 'eth_requestAccounts'});
+		address = accounts[0];
+		console.log(address);
+		await contract.methods.getContractBalance().call({from:address}, function(err, res){
+			contractBalance.innerText = "Contract Balance: " + res + " wei"
+			console.log("Contract Balance: " + res + " wei");
+		})
+	} catch (e) {
+		alert("An error occured, check if you have metamask installed and connected your wallet");
+		console.log(e);
+	}
 }
 
 async function WithdrawFunds(){
-	var accounts = await ethereum.request({method: 'eth_requestAccounts'});
-	address = accounts[0];
-	console.log(address);
-	console.log("Withdraw Amount: " + withdrawFundsAmount.value);
-	await contract.methods.withdrawFunds(withdrawFundsAmount.value).send({from: address}, function(err, res){
-		console.log("Transaction hash: "+res);
-	})
+	if (withdrawFundsAmount.value <= 0 || withdrawFundsAmount.value == undefined) {
+		alert("Amount cannot be zero or less")
+	} else {
+		try {
+			var accounts = await ethereum.request({method: 'eth_requestAccounts'});
+			address = accounts[0];
+			console.log(address);
+			console.log("Withdraw Amount: " + withdrawFundsAmount.value);
+			await contract.methods.withdrawFunds(withdrawFundsAmount.value).send({from: address}, function(err, res){
+				console.log("Transaction hash: "+res);
+			})
+		} catch (e) {
+			alert("An error occured, check if you have metamask installed and connected your wallet");
+			console.log(e);
+		}
+	}
 }
 //ADMIN PART OF CODE END
 
